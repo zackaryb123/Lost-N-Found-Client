@@ -43,3 +43,5 @@ export class LandingInfo extends React.Component {
         );
     }
 }
+
+export default connect()(LandingInfo);
