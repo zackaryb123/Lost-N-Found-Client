@@ -1,21 +1,48 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
+import React from 'react';
+import {connect} from 'react-redux';
+import {Route, withRouter} from 'react-router-dom';
+
 import './App.css';
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
-    );
-  }
+import {refreshAuthToken} from './actions/auth';
+import LandingPage from './components/landing-page';
+
+export class App extends React.Component {
+    //Implement Functions
+    // componentWillReceiveProps(nextProps) {
+    //     if (nextProps.loggedIn && !this.props.loggedIn) {
+    //         // When we are logged in, refresh the auth token periodically
+    //         this.startPeriodicRefresh();
+    //     } else if (!nextProps.loggedIn && this.props.loggedIn) {
+    //         // Stop refreshing when we log out
+    //         this.stopPeriodicRefresh();
+    //     }
+    // }
+    //
+    // componentWillUnmount() {
+    //     this.stopPeriodicRefresh();
+    // }
+    //
+    // startPeriodicRefresh() {
+    //     this.refreshInterval = setInterval(
+    //         () => this.props.dispatch(refreshAuthToken()),
+    //         60 * 60 * 1000 // One hour
+    //     );
+    // }
+    //
+    // stopPeriodicRefresh() {
+    //     if (!this.refreshInterval) {
+    //         return;
+    //     }
+    //
+    //     clearInterval(this.refreshInterval);
+    // }
+
+    render() {
+        return (
+            <LandingPage />
+        );
+    }
 }
 
-export default App;
+export default connect()(App);
