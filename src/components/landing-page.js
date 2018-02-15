@@ -18,12 +18,12 @@ export class LandingPage extends React.Component {
             <div>
             <LandingNav />
             <main role="main">
-                <Route exacy path="/" component={LandingHeader} />
-                <Route exact path="/about" component={LandingAbout} />
-                <Route exact path="/profile" component={LandingProfile} />
-                <Route exact path="/post" component={LandingPost} />
-                <Route exact path="/map" component={LandingMap} />
-                <Route exact path="/join" component={RegisterForm} />
+                <Route path="/" component={LandingHeader} />
+                <Route path="/about" component={LandingAbout} />
+                <Route path="/profile" component={LandingProfile} />
+                <Route path="/post" component={LandingPost} />
+                <Route path="/map" component={LandingMap} />
+                <Route path="/join" component={RegisterForm} />
             </main>
             </div>
         );
