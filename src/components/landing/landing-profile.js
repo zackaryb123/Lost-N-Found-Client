@@ -6,13 +6,13 @@ import './landing.css';
 export class LandingProfile extends React.Component {
     render() {
         return(
-            <section>
+            <div>
                 <header>
                     <h3>Profile</h3>
                 </header>
                 <p>[<em>placeholder for screenshot of Profile recording interface</em>]</p>
                 <p>Interactive charts and personalized statistics show others how reliable those are at returning items.</p>
-            </section>
+            </div>
         );
     }
 }

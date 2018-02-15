@@ -1,10 +1,14 @@
 import React from 'react';
 import {connect} from 'react-redux';
+import {Route} from 'react-router-dom';
+import {BrowserRouter as Router} from 'react-router-dom';
+
 
 import './app.css';
 
-import {refreshAuthToken} from './actions/auth';
-import {LandingPage} from './components/landing-page';
+import {refreshAuthToken} from '../actions/auth';
+import LandingPage from './landing';
+import Dashboard from './dashboard';
 
 export class App extends React.Component {
     componentWillReceiveProps(nextProps) {
@@ -38,7 +42,12 @@ export class App extends React.Component {
 
     render() {
         return (
-            <LandingPage />
+            <div className="app">
+                <Router>
+                    <Route path="/" component={LandingPage} />
+                </Router>
+                <Route path="/dashboard" component={Dashboard} />
+            </div>
         );
     }
 }

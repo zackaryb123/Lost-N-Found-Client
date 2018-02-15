@@ -6,7 +6,7 @@ import './landing.css';
 export class LandingAbout extends React.Component {
     render() {
         return(
-            <div>
+            <div id="about">
                 <header>
                     <h3>About</h3>
                 </header>

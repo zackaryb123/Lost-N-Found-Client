@@ -2,7 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 import { Link } from 'react-router-dom';
 
-import './landing-nav.css';
+import './landing.css';
 
 export class LandingNav extends React.Component {
     render() {
@@ -17,6 +17,9 @@ export class LandingNav extends React.Component {
                     <Link to="/about">
                         <li className="nav-left nav-hover">About</li>
                     </Link>
+                    <Link to="/profile">
+                        <li className="nav-left nav-hover">Profile</li>
+                    </Link>
                     <Link to="/post">
                         <li className="nav-left nav-hover">Post</li>
                     </Link>
@@ -26,7 +29,7 @@ export class LandingNav extends React.Component {
                     <Link to="/join">
                         <li className="nav-left nav-hover">Sign Up</li>
                     </Link>
-                    <Link to="/log-in">
+                    <Link to="/login">
                         <li className="nav-right nav-hover log-in" id="demo-button">Sign In / Demo Account</li>
                     </Link>
                 </ul>
