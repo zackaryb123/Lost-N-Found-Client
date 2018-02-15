@@ -7,7 +7,7 @@ import './app.css';
 import {refreshAuthToken} from './actions/auth';
 import LandingPage from './components/landing-page';
 
-export default class App extends React.Component {
+export class App extends React.Component {
     //Implement Functions
     // componentWillReceiveProps(nextProps) {
     //     if (nextProps.loggedIn && !this.props.loggedIn) {
@@ -44,3 +44,5 @@ export default class App extends React.Component {
         );
     }
 }
+
+export default connect()(App)

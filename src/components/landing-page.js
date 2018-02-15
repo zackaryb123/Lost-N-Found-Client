@@ -10,13 +10,14 @@ import RegisterForm from './register-form';
 export default class LandingPage extends React.Component {
     render() {
         return (
-            <body>
-            <LandingNav/>
+            <div>
+            <LandingNav />
             <main role="main">
-                <LandingInfo/>
-                <RegisterForm/>
+                <LandingInfo />
+                <RegisterForm />
+                <Route path="/about" component={About} />
             </main>
-            </body>
+            </div>
         );
     }
 }
