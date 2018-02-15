@@ -14,16 +14,16 @@ export class LandingNav extends React.Component {
                             <span className="nav-brand nav-brand-scroll">Lost N Found</span>
                         </li>
                     </Link>
-                    <Link to="/About">
+                    <Link to="/about">
                         <li className="nav-left nav-hover">About</li>
                     </Link>
-                    <Link to="/Post">
+                    <Link to="/post">
                         <li className="nav-left nav-hover">Post</li>
                     </Link>
-                    <Link to="/Map">
+                    <Link to="/map">
                         <li className="nav-left nav-hover">Map</li>
                     </Link>
-                    <Link to="/Sign-Up">
+                    <Link to="/join">
                         <li className="nav-left nav-hover">Sign Up</li>
                     </Link>
                     <Link to="/log-in">
