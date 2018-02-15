@@ -7,7 +7,7 @@ import './dashboard.css';
 export class DashboardNav extends React.Component {
     render() {
         return (
-            <nav role="navigation">
+            <nav>
                 <ul>
                     <Link to="/dashboard">
                         <li>Profile</li>
