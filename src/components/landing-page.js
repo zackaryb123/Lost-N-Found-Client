@@ -1,5 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
+import {Route, withRouter} from 'react-router-dom';
 
 import './landing-page.css';
 
@@ -7,7 +8,7 @@ import LandingNav from './landing-nav';
 import LandingInfo from './landing-info';
 import RegisterForm from './register-form';
 
-export default class LandingPage extends React.Component {
+export class LandingPage extends React.Component {
     render() {
         return (
             <div>
@@ -21,3 +22,5 @@ export default class LandingPage extends React.Component {
         );
     }
 }
+
+export default connect()(LandingPage);
