@@ -7,7 +7,7 @@ import './landing-nav.css';
 export class LandingNav extends React.Component {
     render() {
         return(
-            <nav id="Landing-Nav" role="navigation">
+            <nav id="Landing-Nav">
                 <ul className="nav-ul-scroll">
                     <Link to="/">
                         <li className="nav-left nav-hover">
