@@ -2,10 +2,14 @@ import React from 'react';
 import {connect} from 'react-redux';
 import {Route, withRouter} from 'react-router-dom';
 
-import './landing-page.css';
+import './landing.css';
 
 import LandingNav from './landing-nav';
-import LandingInfo from './landing-info';
+import LandingHeader from './landing-header';
+import LandingAbout from './landing-about';
+import LandingProfile from './landing-profile';
+import LandingPost from './landing-post';
+import LandingMap from './landing-map';
 import RegisterForm from './register-form';
 
 export class LandingPage extends React.Component {
@@ -14,9 +18,12 @@ export class LandingPage extends React.Component {
             <div>
             <LandingNav />
             <main role="main">
-                <LandingInfo />
+                <LandingHeader />
+                <Route path="about" component={LandingAbout} />
+                <Route path="profile" component={LandingProfile} />
+                <Route path="post" component={LandingPost} />
+                <Route path="map" component={LandingMap} />
                 <RegisterForm />
-                <Route path="/about" component={About} />
             </main>
             </div>
         );

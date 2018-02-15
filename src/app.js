@@ -4,7 +4,7 @@ import {connect} from 'react-redux';
 import './app.css';
 
 import {refreshAuthToken} from './actions/auth';
-import LandingPage from './components/landing-page';
+import {LandingPage} from './components/landing-page';
 
 export class App extends React.Component {
     componentWillReceiveProps(nextProps) {
