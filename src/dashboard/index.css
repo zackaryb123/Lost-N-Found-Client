@@ -1,0 +1,79 @@
+.nav {
+    position: fixed;
+    height: 1rem;
+    top:0;
+    left:0;
+    right:0;
+    z-index: 10;
+}
+
+.item-drop-down > * {
+    display: inline;
+}
+
+section {
+    min-height: 200px;
+    padding: 30px 15px;
+    background-color: #bbb;
+}
+
+section:nth-child(even) {
+    background-color: #ddd;
+}
+
+form lable, form button {
+    display: block;
+}
+form button {
+    margin: auto;
+}
+
+.list {
+    padding: 0px 3rem;
+}
+
+textarea {
+    width: 100%;
+}
+
+dt,
+dd,
+form lable {
+    text-align: left;
+}
+
+p {
+    margin: 0 auto;
+    max-width: 650px;
+}
+
+p + p {
+    margin-top: 15px;
+}
+
+dream-description::before {
+    font-family: Georgia, serif;
+    position: absolute;
+    font-size: 6em;
+    line-height: 1;
+    top: 0;
+    left: 0;
+    content: "here"
+}
+
+.item-drop-down {
+    text-align: left;
+}
+
+.item-drop-down-content {
+    padding: 0px 2rem;
+}
+
+#js-Avatar {
+    border-radius: 500rem;
+    width: 200px;
+}
+
+#js-Post-User {
+    margin-top: 0px;
+}
