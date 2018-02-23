@@ -6,7 +6,7 @@ import './profile.css';
 
 export class Avatar extends React.Component {
     render() {
-        //console.log(this.props.currentUser);
+        console.log(this.props.currentUser);
         return (
             <div className="user-avatar">
                 <div>

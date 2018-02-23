@@ -24,19 +24,11 @@ export const fetchStatesData = () => (dispatch, getState) => {
     })
         .then(res => normalizeResponseErrors(res))
         .then(res => res.json())
-        .then(({data}) => dispatch(fetchStatesDataSuccess(data)))
+        .then(({data}) => {
+            console.log(data);
+            dispatch(fetchStatesDataSuccess(data));
+        })
         .catch(err => {
             dispatch(fetchStatesDataError(err));
         });
-
-    //         'Alabama',
-    //         'Arkansas',
-    //         'Florida',
-    //         'Georgia',
-    //         'Kentucky',
-    //         'Louisiana',
-    //         'Mississippi',
-    //         'North Carolina',
-    //         'South Carolina',
-    //         'Tennessee'
 };

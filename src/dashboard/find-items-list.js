@@ -25,22 +25,22 @@ export class ItemsList extends React.Component {
         const items = this.props.items.map((item) => (
             <div>
                 <Button color="primary" onClick={this.toggle} style={{ marginBottom: '1rem' }}>
-                    {this.props.name}
+                    {item.name}
                 </Button>
-                <Collapse isOpen={this.state.collapse}>
+                <Collapse isOpen={item.collapse}>
                     <Card>
                         <CardBody>
                             <div>
                                 <h4>Location Found:</h4>
-                                {this.props.location}
+                                {item.location}
                             </div>
                             <div>
                                 <h4>Date Found:</h4>
-                                {this.props.dateFound}
+                                {item.dateFound}
                             </div>
                             <div>
                                 <h4>Contact Info:</h4>
-                                {this.props.contactInfo}
+                                {item.contactInfo}
                             </div>
                         </CardBody>
                     </Card>

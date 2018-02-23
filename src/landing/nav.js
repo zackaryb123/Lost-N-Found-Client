@@ -1,43 +1,48 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 
 import './index.css';
 
 export class LandingNav extends React.Component {
     render() {
+        if(this.props.loggedIn) {
+            return <Redirect to="/dashboard" />
+        }
         return(
             <div>
                 <nav id="Landing-Nav">
                     <ul className="nav-ul-scroll">
-                        <Link to="/landing">
+                        <Link to="/">
                             <li className="nav-left nav-hover">Lost-N-Found</li>
                         </Link>
-                        <Link to="/landing/about">
+                        <Link to="/about">
                             <li className="nav-left nav-hover">About</li>
                         </Link>
-                        <Link to="/landing/profile">
+                        <Link to="/profile">
                             <li className="nav-left nav-hover">Profile</li>
                         </Link>
-                        <Link to="/landing/post">
+                        <Link to="/post">
                             <li className="nav-left nav-hover">Post</li>
                         </Link>
-                        <Link to="/landing/map">
+                        <Link to="/map">
                             <li className="nav-left nav-hover">Map</li>
                         </Link>
-                        <Link to="/landing/join">
+                        <Link to="/join">
                             <li className="nav-left nav-hover">Sign Up</li>
                         </Link>
-                        <Link to="/landing/login">
+                        <Link to="/login">
                             <li className="nav-right nav-hover log-in" id="demo-button">Sign In / Demo Account</li>
                         </Link>
                     </ul>
                 </nav>
-                {/*<LandingHeader />*/}
             </div>
         );
     }
 }
 
+const mapStateToProps = state => ({
+   loggedIn: state.auth.currentUser !== null
+});
 
-export default connect()(LandingNav);
+export default connect(mapStateToProps)(LandingNav);

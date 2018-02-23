@@ -10,11 +10,10 @@ import Find from "./find";
 
 //import requiresLogin from './requires-login';
 
-export class Dashboard extends React.Component {
-    render() {
+export function Dashboard() {
         return (
             <div className="page">
-                <Route path="/dashboard" component={DashboardNav} />
+                <DashboardNav />
                 <div className="dashboard">
                     <Route path="/dashboard/profile" component={Profile} />
                     <Route path="/dashboard/find" component={Find} />
@@ -23,8 +22,6 @@ export class Dashboard extends React.Component {
                 </div>
             </div>
         );
-    }
 }
-
 
 export default connect()(Dashboard); //requiresLogin()

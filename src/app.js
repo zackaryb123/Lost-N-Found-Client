@@ -3,13 +3,11 @@ import {connect} from 'react-redux';
 import {Route} from 'react-router-dom';
 import {BrowserRouter as Router} from 'react-router-dom';
 
-
 import './app.css';
 
 import {refreshAuthToken} from './actions/auth';
 import Landing from './landing/index';
 import Dashboard from './dashboard/index';
-import LandingRouter from "./landing/router";
 
 export class App extends React.Component {
     componentWillReceiveProps(nextProps) {
@@ -44,12 +42,11 @@ export class App extends React.Component {
     render() {
         return (
             <div className="app">
-                <LandingRouter/>
                 <Router>
-                    <Route path="/landing" component={Landing} />
+                    <Route component={Landing}/>
                 </Router>
                 <Router>
-                    <Route path="/dashboard" component={Dashboard} />
+                    <Route component={Dashboard}/>
                 </Router>
             </div>
         );

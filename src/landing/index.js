@@ -1,6 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import {Route, Redirect} from 'react-router-dom';
+import {Route} from 'react-router-dom';
 
 import './index.css';
 
@@ -13,33 +13,27 @@ import LandingMap from './l-map';
 import RegisterForm from '../forms/register-form';
 import LoginForm from '../forms/login-form';
 
-export class Landing extends React.Component {
-
-    render() {
-        if (this.props.loggedIn) {
-            return <Redirect to="/dashboard" />;
-        }
+export function Landing() {
+        // if (props.loggedIn) {
+        //     return <Redirect to="/dashboard" />;
+        // }
 
         return (
             <div className="page">
-                <Route path="/landing" component={LandingNav} />
+                <LandingNav />
                 <div className="landing">
-                    <Route exact path="/landing" render={() =>
+                    <Route exact path="/" render={() =>
                         <LandingHeader/>} />
-                    <Route path="/landing/about" component={LandingAbout} />
-                    <Route path="/landing/profile" component={LandingProfile} />
-                    <Route path="/landing/post" component={LandingPost} />
-                    <Route path="/landing/map" component={LandingMap} />
-                    <Route path="/landing/join" component={RegisterForm} />
-                    <Route path="/landing/login" component={LoginForm}/>
+                    <Route path="/about" component={LandingAbout} />
+                    <Route path="/profile" component={LandingProfile} />
+                    <Route path="/post" component={LandingPost} />
+                    <Route path="/map" component={LandingMap} />
+                    <Route path="/join" component={RegisterForm} />
+                    <Route path="/login" component={LoginForm}/>
                 </div>
             </div>
         );
-    }
+
 }
 
-const mapStateToProps = state => ({
-    loggedIn: state.auth.currentUser !== null
-});
-
-export default connect(mapStateToProps)(Landing);
+export default connect()(Landing);
