@@ -4,15 +4,11 @@ import {connect} from 'react-redux';
 import './profile.css';
 
 export class ProfileReturnRate extends React.Component {
-    // componentDidMount() {
-    //     this.props.dispatch(fetchProfileData());
-    // }
-
     render() {
         return (
             <div className="return-rate">
                 <div>
-                    <p>[<em>{this.props.returnRate}</em>]</p>
+                    <p>[<em>{this.props.returnRate}%</em>]</p>
                 </div>
             </div>
         );
@@ -20,7 +16,7 @@ export class ProfileReturnRate extends React.Component {
 }
 
 const mapStatesToProps = state => ({
-    returnRate: state.auth.returnRate
+    returnRate: state.auth.currentUser.returnRate
 
 });
 

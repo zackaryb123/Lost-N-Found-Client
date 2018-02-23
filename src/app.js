@@ -9,6 +9,7 @@ import './app.css';
 import {refreshAuthToken} from './actions/auth';
 import Landing from './landing/index';
 import Dashboard from './dashboard/index';
+import LandingRouter from "./landing/router";
 
 export class App extends React.Component {
     componentWillReceiveProps(nextProps) {
@@ -43,8 +44,9 @@ export class App extends React.Component {
     render() {
         return (
             <div className="app">
+                <LandingRouter/>
                 <Router>
-                    <Route path="/" component={Landing} />
+                    <Route path="/landing" component={Landing} />
                 </Router>
                 <Router>
                     <Route path="/dashboard" component={Dashboard} />

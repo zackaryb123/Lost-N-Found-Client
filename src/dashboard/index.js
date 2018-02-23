@@ -2,23 +2,19 @@ import React from 'react';
 import {connect} from 'react-redux';
 import {Route} from 'react-router-dom';
 
-//import requiresLogin from './requires-login';
 import DashboardNav from "./nav";
 import Profile from "./profile";
 import Find from "./find";
-import Post from "./post";
-import Map from "./map";
+//import Post from "./post";
+//import Map from "./map";
 
+//import requiresLogin from './requires-login';
 
 export class Dashboard extends React.Component {
-    // componentDidMount() {
-    //     this.props.dispatch();
-    // }
-
     render() {
         return (
             <div className="page">
-                <DashboardNav />
+                <Route path="/dashboard" component={DashboardNav} />
                 <div className="dashboard">
                     <Route path="/dashboard/profile" component={Profile} />
                     <Route path="/dashboard/find" component={Find} />

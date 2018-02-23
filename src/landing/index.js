@@ -12,20 +12,20 @@ import LandingPost from './l-post';
 import LandingMap from './l-map';
 import RegisterForm from '../forms/register-form';
 import LoginForm from '../forms/login-form';
-import Dashboard from '../dashboard/index';
 
 export class Landing extends React.Component {
 
     render() {
         if (this.props.loggedIn) {
-            return <Redirect to="/dashboard"/>;
+            return <Redirect to="/dashboard" />;
         }
 
         return (
             <div className="page">
-                <Route exact path="/" component={LandingNav} />
+                <Route path="/landing" component={LandingNav} />
                 <div className="landing">
-                    <Route path="/landing" component={LandingHeader} />
+                    <Route exact path="/landing" render={() =>
+                        <LandingHeader/>} />
                     <Route path="/landing/about" component={LandingAbout} />
                     <Route path="/landing/profile" component={LandingProfile} />
                     <Route path="/landing/post" component={LandingPost} />

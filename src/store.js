@@ -5,7 +5,6 @@ import thunk from 'redux-thunk';
 import {loadAuthToken} from './local-storage';
 
 import authReducer from './reducers/auth';
-//import profileDataReducer from './reducers/profile-data';
 import itemDataReducer from './reducers/items-data';
 import statesDataReducer from './reducers/states-data';
 
@@ -15,7 +14,6 @@ const store = createStore(
     combineReducers({
         form: formReducer,
         auth: authReducer,
-        // profile: profileDataReducer,
         items: itemDataReducer,
         states: statesDataReducer
     }),

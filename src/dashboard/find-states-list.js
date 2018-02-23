@@ -25,13 +25,15 @@ export class StatesList extends React.Component {
     }
 
     render() {
+        console.log(this.props.states);
+
         const states = this.props.states.map((state) => (
             <div className="states">
                 <Button color="primary" onClick={this.toggle} style={{ marginBottom: '1rem' }}>{state}</Button>
                 <Collapse isOpen={this.state.collapse}>
                     <Card>
                         <CardBody>
-                            {ItemsList}
+                            <ItemsList />
                         </CardBody>
                     </Card>
                 </Collapse>
@@ -47,7 +49,7 @@ export class StatesList extends React.Component {
 }
 
 const mapStateToProps = state => ({
-    states: state.states,
+    states: state.states.states,
 });
 
 export default connect(mapStateToProps)(StatesList); //requires login

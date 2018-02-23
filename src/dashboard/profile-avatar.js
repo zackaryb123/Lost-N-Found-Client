@@ -1,20 +1,16 @@
 import React from 'react';
 import {connect} from 'react-redux';
-
 //import requiresLogin from './requires-login';
 
 import './profile.css';
 
 export class Avatar extends React.Component {
-    // componentDidMount() {
-    //     this.props.dispatch(fetchProfileData());
-    // }
-
     render() {
+        //console.log(this.props.currentUser);
         return (
             <div className="user-avatar">
                 <div>
-                    <image src={this.props.avatar}> </image>
+                   <img src={this.props.avatar} alt="Avatar" />
                 </div>
                 <h1>{this.props.username}</h1>
             </div>
@@ -22,9 +18,12 @@ export class Avatar extends React.Component {
     }
 }
 
-const mapStateToProps = state => ({
-    username: state.auth.username,
-    avatar: state.auth.avatar
-});
+const mapStateToProps = state => {
+    const currentUser = state.auth.currentUser;
+    return {
+        avatar: currentUser.avatar,
+        username: currentUser.username
+    };
+};
 
-export default connect(mapStateToProps)(Avatar); // requiresLogin
+export default connect(mapStateToProps)(Avatar);

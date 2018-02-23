@@ -4,10 +4,6 @@ import {connect} from 'react-redux';
 import './profile.css';
 
 export class ProfileInfo extends React.Component {
-    // componentDidMount() {
-    //     this.props.dispatch(fetchProfileData());
-    // }
-
     render() {
         return (
             <div className="user-info">
@@ -18,9 +14,12 @@ export class ProfileInfo extends React.Component {
     }s
 }
 
-const mapStateToProps = state => ({
-    fullName: `${state.auth.firstName} ${state.auth.lastName}`,
-    contactInfo: state.auth.contactInfo
-});
+const mapStateToProps = state => {
+    const currentUser = state.auth.currentUser;
+    return {
+        fullName: `${currentUser.firstName} ${currentUser.lastName}`,
+        contactInfo: currentUser.email
+    };
+};
 
 export default connect(mapStateToProps)(ProfileInfo);

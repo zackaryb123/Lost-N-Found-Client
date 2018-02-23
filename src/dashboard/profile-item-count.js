@@ -5,15 +5,11 @@ import './profile.css';
 
 
 export class ProfileItemCount extends React.Component {
-    // componentDidMount() {
-    //     this.props.dispatch(fetchProfileData());
-    // }
-
     render() {
         return (
             <div className="items-count">
                 <div>
-                    <p>[<em>{this.props.itemCount}</em>]</p>
+                    <p>[<em>{this.props.itemCount}%</em>]</p>
                 </div>
             </div>
         );
@@ -21,7 +17,7 @@ export class ProfileItemCount extends React.Component {
 }
 
 const mapStateToProps = state => ({
-    itemCount: state.auth.itemCount
+    itemCount: state.auth.currentUser.itemCount
 });
 
 export default connect(mapStateToProps)(ProfileItemCount);

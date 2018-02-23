@@ -3,7 +3,6 @@ import {connect} from 'react-redux';
 import { Link } from 'react-router-dom';
 
 import './index.css';
-import {LandingHeader} from "./l-header";
 
 export class LandingNav extends React.Component {
     render() {
@@ -11,6 +10,9 @@ export class LandingNav extends React.Component {
             <div>
                 <nav id="Landing-Nav">
                     <ul className="nav-ul-scroll">
+                        <Link to="/landing">
+                            <li className="nav-left nav-hover">Lost-N-Found</li>
+                        </Link>
                         <Link to="/landing/about">
                             <li className="nav-left nav-hover">About</li>
                         </Link>
