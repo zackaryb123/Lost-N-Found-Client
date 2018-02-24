@@ -4,7 +4,8 @@ import {
 } from '../actions/states-data';
 
 const initialState = {
-    states: [],
+    data: [],
+    //collapse: true,
     error: null
 };
 

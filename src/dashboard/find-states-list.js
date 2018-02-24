@@ -1,11 +1,13 @@
 import React from 'react';
-import { Collapse, Button, CardBody, Card } from 'reactstrap';
+import { Collapse, Button, CardBody, Card, ListGroupItem } from 'reactstrap';
 import {connect} from 'react-redux';
 
 import './index.css';
 
 //import ItemsList from './find-items-list';
 import {fetchStatesData} from "../actions/states-data";
+import {fetchItemsData} from "../actions/items-data";
+//import {states} from "../actions/utils";
 
 //import requiresLogin from '../requires-login';
 
@@ -13,45 +15,37 @@ export class StatesList extends React.Component {
     constructor(props) {
         super(props);
         this.toggle = this.toggle.bind(this);
-        this.state = {collapse: false};
+        this.state = { collapse: false };
     }
 
-    componentDidMount() {
-        this.props.dispatch(fetchStatesData);
-        let data = this.props.dispatch(fetchStatesData);
-        console.log(data);
+    // componentDidMount() {
+    //     this.props.dispatch(fetchStatesData());
+    // }
+
+    toggle() {
+        this.setState({ collapse: !this.state.collapse });
     }
 
-    toggle(){
-        this.setState({collapse: !this.state.collapse});
-    }
 
     render() {
-        console.log(this.props.states);
-
-        const states = this.props.states.map((state) => (
-            <div className="states">
-                <Button color="primary" onClick={this.toggle} style={{ marginBottom: '1rem' }}>{state}</Button>
-                <Collapse isOpen={this.state.collapse}>
-                    <Card>
-                        <CardBody>
-                            {/*<ItemsList />*/}
-                        </CardBody>
-                    </Card>
-                </Collapse>
-            </div>
-        ));
-        console.log('render finished');
+        const states = this.props.states;
+        console.log(states);
         return (
-            <div className="states-list">
-                {states}
-            </div>
+            <ListGroupItem style={{listStyle: 'none'}}>
+                <div className="states">
+                    <Button color="primary" onClick={this.toggle} style={{ marginBottom: '1rem' }}>{states.name}</Button>
+                    <Collapse isOpen={this.state.collapse}>
+                        <Card>
+                            <CardBody>
+                                qwertyuiopasdfghjklzxcvbnm
+                                {/*<ItemsList />*/}
+                            </CardBody>
+                        </Card>
+                    </Collapse>
+                </div>
+            </ListGroupItem>
         );
     }
 }
 
-const mapStateToProps = state => ({
-    states: state.states.states,
-});
-
-export default connect(mapStateToProps)(StatesList); //requires login
+export default connect()(StatesList); //requires login

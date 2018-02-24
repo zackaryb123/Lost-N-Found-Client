@@ -16,15 +16,17 @@ export const fetchStatesDataError = error => ({
 export const fetchStatesData = () => (dispatch, getState) => {
     const authToken = getState().auth.authToken;
     return fetch(`${API_BASE_URL}/states`, {
+        //mode: 'no-cors',
         method: 'GET',
         headers: {
             // Provide our auth token as credentials
+            Accept : 'application/json',
             Authorization: `Bearer ${authToken}`
         }
     })
         .then(res => normalizeResponseErrors(res))
         .then(res => res.json())
-        .then(({data}) => {
+        .then((data) => {
             console.log(data);
             dispatch(fetchStatesDataSuccess(data));
         })
