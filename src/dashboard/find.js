@@ -11,11 +11,11 @@ export class Find extends React.Component {
     componentDidMount() {
         this.props.dispatch(fetchStatesData());
     }
+
     render() {
         const statesList = Object.keys(this.props.states).map((state, index) =>
             <StatesList key={index} states={this.props.states[state]}/>
         );
-        console.log(statesList);
         return (
             <div className="find-page">
                 <h1>Lost Item List</h1>

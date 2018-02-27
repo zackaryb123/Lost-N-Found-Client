@@ -1,12 +1,12 @@
 import {
     FETCH_STATES_DATA_SUCCESS,
-    FETCH_STATES_DATA_ERROR
+    FETCH_STATES_DATA_ERROR,
 } from '../actions/states-data';
 
 const initialState = {
     data: [],
-    //collapse: true,
     error: null
+    //collapse: true,
 };
 
 export default function reducer(state = initialState, action) {
