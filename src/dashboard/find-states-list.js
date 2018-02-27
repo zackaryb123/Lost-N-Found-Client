@@ -5,9 +5,7 @@ import {connect} from 'react-redux';
 import './index.css';
 
 //import ItemsList from './find-items-list';
-import {fetchStatesData} from "../actions/states-data";
-import {fetchItemsData} from "../actions/items-data";
-//import {states} from "../actions/utils";
+//import {fetchItemsData} from "../actions/items-data";
 
 //import requiresLogin from '../requires-login';
 
@@ -17,10 +15,6 @@ export class StatesList extends React.Component {
         this.toggle = this.toggle.bind(this);
         this.state = { collapse: false };
     }
-
-    // componentDidMount() {
-    //     this.props.dispatch(fetchStatesData());
-    // }
 
     toggle() {
         this.setState({ collapse: !this.state.collapse });
@@ -37,7 +31,7 @@ export class StatesList extends React.Component {
                     <Collapse isOpen={this.state.collapse}>
                         <Card>
                             <CardBody>
-                                qwertyuiopasdfghjklzxcvbnm
+                                List of Items
                                 {/*<ItemsList />*/}
                             </CardBody>
                         </Card>
