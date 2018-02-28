@@ -14,10 +14,6 @@ import RegisterForm from '../forms/register-form';
 import LoginForm from '../forms/login-form';
 
 export function Landing() {
-        // if (props.loggedIn) {
-        //     return <Redirect to="/dashboard" />;
-        // }
-
         return (
             <div className="page">
                 <LandingNav />

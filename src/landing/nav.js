@@ -32,7 +32,7 @@ export class LandingNav extends React.Component {
                             <li className="nav-left nav-hover">Sign Up</li>
                         </Link>
                         <Link to="/login">
-                            <li className="nav-right nav-hover log-in" id="demo-button">Sign In / Demo Account</li>
+                            <li className="nav-right nav-hover log-in" id="demo-button">Sign In</li>
                         </Link>
                     </ul>
                 </nav>

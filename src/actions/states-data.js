@@ -34,3 +34,24 @@ export const fetchStatesData = () => (dispatch, getState) => {
             dispatch(fetchStatesDataError(err));
         });
 };
+
+export const postItem = item => (dispatch, getState) => {
+    const authToken = getState().auth.authToken;
+    return fetch(`${API_BASE_URL}/states`, {        //mode: 'no-cors',
+        method: 'PUT',
+        headers: {
+            // Provide our auth token as credentials
+            Accept : 'application/json',
+            Authorization: `Bearer ${authToken}`
+        },
+        body: JSON.stringify(item)
+    })
+        .then(res => normalizeResponseErrors(res))
+        .then(res => res.json())
+        .then((data) => {
+            dispatch(fetchStatesDataSuccess(data));
+        })
+        .catch(err => {
+            dispatch(fetchStatesDataError(err));
+        });
+};
