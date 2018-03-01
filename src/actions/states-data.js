@@ -1,5 +1,6 @@
 import {API_BASE_URL} from '../config';
 import {normalizeResponseErrors} from './utils';
+import {SubmissionError} from "redux-form";
 
 export const FETCH_STATES_DATA_SUCCESS = 'FETCH_STATES_DATA_SUCCESS';
 export const fetchStatesDataSuccess = data => ({
@@ -27,7 +28,6 @@ export const fetchStatesData = () => (dispatch, getState) => {
         .then(res => normalizeResponseErrors(res))
         .then(res => res.json())
         .then((data) => {
-            console.log(data);
             dispatch(fetchStatesDataSuccess(data));
         })
         .catch(err => {
@@ -37,21 +37,27 @@ export const fetchStatesData = () => (dispatch, getState) => {
 
 export const postItem = item => (dispatch, getState) => {
     const authToken = getState().auth.authToken;
-    return fetch(`${API_BASE_URL}/states`, {        //mode: 'no-cors',
+    return fetch(`${API_BASE_URL}/states/post`, {        //mode: 'no-cors',
         method: 'PUT',
         headers: {
             // Provide our auth token as credentials
-            Accept : 'application/json',
+            'content-type': 'application/json',
+            Accept: 'application/json',
             Authorization: `Bearer ${authToken}`
         },
         body: JSON.stringify(item)
     })
         .then(res => normalizeResponseErrors(res))
         .then(res => res.json())
-        .then((data) => {
-            dispatch(fetchStatesDataSuccess(data));
-        })
         .catch(err => {
-            dispatch(fetchStatesDataError(err));
+            const {reason, message, location} = err;
+            if (reason === 'ValidationError') {
+                // Convert ValidationErrors into SubmissionErrors for Redux Form
+                return Promise.reject(
+                    new SubmissionError({
+                        [location]: message
+                    })
+                );
+            }
         });
 };

@@ -1,51 +1,56 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {reduxForm, Field, focus} from 'redux-form';
-import Select from 'react-select';
 import moment from 'moment';
-import { SingleDatePicker } from 'react-dates';
+import DateTimePicker from 'react-widgets/lib/DateTimePicker';
+import DropdownList from 'react-widgets/lib/DropdownList'
+import momentLocalizer from "react-widgets-moment";
 
-import 'react-dates/initialize';
-import 'react-select/dist/react-select.css';
-import 'react-dates/lib/css/_datepicker.css';
+import 'react-widgets/dist/css/react-widgets.css';
 import './form.css';
 
 import Input from './input';
 import {required, nonEmpty, isTrimmed} from '../validators';
 
 import '../landing/index.css';
-import {postItem} from "../actions/states-data";
+import {fetchStatesData, postItem} from "../actions/states-data";
 
 import STATES from './data';
+momentLocalizer(moment);
 
 export class PostForm extends React.Component {
-    constructor(props) {
-        super(props);
-        this.updateValue = this.updateValue.bind(this);
-        this.state = {
-            selectedOption: '',
-            selectedDate: moment.localeData().longDateFormat('L'),
-        };
-    }
-
     onSubmit(values) {
         const {name, location, state, dateFound, contactInfo} = values;
         const item = {name, location, state, dateFound, contactInfo};
-        return this.props
-            .dispatch(postItem(item));
-    }
 
-    updateValue (selectedOption) {
-        this.setState({selectedOption});
+        console.log(values);
+        console.log(item);
+
+        return this.props
+            .dispatch(postItem(item))
+            .then(this.props.dispatch(fetchStatesData()));
     }
 
     render() {
         const options = STATES['US'];
-        const {selectedOption} = this.state;
-        const value = selectedOption && selectedOption.value;
+
+        const renderDropdownList = ({ input, data, valueField, textField }) =>
+            <DropdownList {...input}
+                          data={data}
+                          valueField={valueField}
+                          textField={textField}
+                          onChange={input.onChange} />;
+
+        const renderDateTimePicker = ({ input: { onChange, value }, showTime }) =>
+            <DateTimePicker
+                onChange={onChange}
+                format="DD MMM YYYY"
+                time={showTime}
+                value={!value ? null : new Date(value)}
+            />;
 
         return (
-            <form className="post-form"
+            <form className="post-form column"
                   onSubmit={this.props.handleSubmit(values =>
                       this.onSubmit(values))}
             >
@@ -59,25 +64,23 @@ export class PostForm extends React.Component {
 
                 <label htmlFor="location">Location Found</label>
                 <Field
+                    name="location"
                     component={Input}
                     type="text"
-                    name="location" />
-
-                <label htmlFor="state">State</label>
-                <Select
-                    options={options}
-                    name="state"
-                    value={value}
-                    onChange={this.updateValue}
                 />
-
+                <label htmlFor="state">State</label>
+                <Field
+                    name="state"
+                    component={renderDropdownList}
+                    data={options}
+                    valueField="value"
+                    textField="color"
+                />
                 <label htmlFor="dateFound">Date Found</label>
-                <SingleDatePicker
+                <Field
                     name="dateFound"
-                    date={this.state.date} // momentPropTypes.momentObj or null
-                    onDateChange={date => this.setState({ date })} // PropTypes.func.isRequired
-                    focused={this.state.focused} // PropTypes.bool
-                    onFocusChange={({ focused }) => this.setState({ focused })} // PropTypes.func.isRequired
+                    showTime={false}
+                    component={renderDateTimePicker}
                 />
                 <label htmlFor="contactInfo">Contact Info</label>
                 <Field
@@ -101,7 +104,7 @@ const mapStateToProps = state => ({
     states: state.states.data
 });
 
-PostForm = connect(mapStateToProps)(PostForm)
+PostForm = connect(mapStateToProps)(PostForm);
 
 export default reduxForm({
     //contactInfo: state.auth.currentUser.email,

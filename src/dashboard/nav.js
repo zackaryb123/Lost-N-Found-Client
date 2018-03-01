@@ -17,13 +17,6 @@ export class DashboardNav extends React.Component {
         if (!this.props.loggedIn) {
             return <Redirect to="/" />
         }
-
-        let logOutButton;
-        if (this.props.loggedIn) {
-            logOutButton = (
-                <button onClick={() => this.logOut()}>Log out</button>
-            );
-        }
         return (
             <nav>
                 <ul>
@@ -39,7 +32,9 @@ export class DashboardNav extends React.Component {
                     <Link to="/dashboard/map">
                         <li>Map</li>
                     </Link>
-                    {logOutButton}
+                    <Link to="/" onClick={() => this.logOut()}>
+                        <li>LogOut</li>
+                    </Link>
                 </ul>
             </nav>
         );

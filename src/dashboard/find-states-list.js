@@ -1,6 +1,7 @@
 import React from 'react';
-import { Collapse, Button, CardBody, Card } from 'reactstrap';
 import {connect} from 'react-redux';
+import 'bulma/css/bulma.css';
+
 
 import './index.css';
 
@@ -11,36 +12,42 @@ export class StatesList extends React.Component {
     constructor(props) {
         super(props);
         this.toggle = this.toggle.bind(this);
-        this.state = { collapse: true };
+        this.state = {
+            active: false
+        };
     }
 
     toggle() {
-        this.setState({ collapse: !this.state.collapse });
+        this.setState({active: !this.state.active});
     }
-
-
     render() {
         const states = this.props.states;
+
         const itemsList = Object.keys(this.props.states.items).map((item, index) =>
             <ItemsList key={index} items={this.props.states.items[item]}/>
         );
         return (
-            <div className="states">
-                <Button color="primary" onClick={this.toggle} style={{ marginBottom: '1rem' }}>{states.name}</Button>
-                <Collapse isOpen={this.state.collapse}>
-                    <Card>
-                        <CardBody>
+            <div className={this.state.active ? 'column dropdown is-active': 'column dropdown'}>
+                <div className="dropdown-trigger">
+                    <button className="button is-fullwidth" onClick={this.toggle} aria-haspopup="true" aria-controls={states.name}>
+                        <span>{states.name}</span>
+                        <span className="icon is-small">
+                            <i className="fas fa-angle-down" aria-hidden="true"></i>
+                        </span>
+                    </button>
+                </div>
+                <div className={this.state.active ? 'is-fullwidth ': 'is-hidden'} id={states.name} role="menu">
+                    <div className="dropdown-content">
+                        <div className="dropdown-item">
+                            <div>
                             {itemsList}
-                        </CardBody>
-                    </Card>
-                </Collapse>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         );
     }
 }
-
-// const mapStateToProps = state => ({
-//
-// });
 
 export default connect()(StatesList); //requires login

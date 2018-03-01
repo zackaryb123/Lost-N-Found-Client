@@ -7,10 +7,6 @@ import PostForm from "../forms/post-form";
 //import requiresLogin from '../requires-login';
 
 export class Profile extends React.Component {
-    // componentDidMount() {
-    //     this.props.dispatch();
-    // }
-
     render() {
         return (
             <div className="post-page">

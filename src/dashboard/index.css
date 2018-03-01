@@ -21,7 +21,7 @@ section:nth-child(even) {
     background-color: #ddd;
 }
 
-form lable, form button {
+form button {
     display: block;
 }
 form button {
@@ -29,13 +29,13 @@ form button {
 }
 
 .list {
-    padding: 0px 3rem;
+    padding: 0 3rem;
 }
 
 dt,
 dd,
-form lable {
-    text-align: left;
+form input {
+    text-align: center;
 }
 
 p {
@@ -47,22 +47,12 @@ p + p {
     margin-top: 15px;
 }
 
-dream-description::before {
-    font-family: Georgia, serif;
-    position: absolute;
-    font-size: 6em;
-    line-height: 1;
-    top: 0;
-    left: 0;
-    content: "here"
-}
-
 .item-drop-down {
     text-align: left;
 }
 
 .item-drop-down-content {
-    padding: 0px 2rem;
+    padding: 0 2rem;
 }
 
 #js-Avatar {
@@ -71,5 +61,5 @@ dream-description::before {
 }
 
 #js-Post-User {
-    margin-top: 0px;
+    margin-top: 0;
 }
