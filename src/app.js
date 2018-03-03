@@ -3,8 +3,6 @@ import {connect} from 'react-redux';
 import {Route} from 'react-router-dom';
 import {BrowserRouter as Router} from 'react-router-dom';
 
-import './app.css';
-
 import {refreshAuthToken} from './actions/auth';
 import Landing from './landing/index';
 import Dashboard from './dashboard/index';

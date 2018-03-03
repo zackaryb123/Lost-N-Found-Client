@@ -11,7 +11,7 @@ export class Avatar extends React.Component {
                 <div>
                    <img src={this.props.avatar} alt="Avatar" />
                 </div>
-                <h1>{this.props.username}</h1>
+                <h1>@{this.props.username}</h1>
             </div>
         );
     }

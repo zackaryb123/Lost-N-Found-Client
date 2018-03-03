@@ -3,7 +3,8 @@ import {
     CLEAR_AUTH,
     AUTH_REQUEST,
     AUTH_SUCCESS,
-    AUTH_ERROR
+    AUTH_ERROR,
+    // POST_ITEM_SUCCESS
 } from '../actions/auth';
 
 const initialState = {
@@ -39,5 +40,10 @@ export default function reducer(state = initialState, action) {
             error: action.error
         });
     }
+    // else if (action.type === POST_ITEM_SUCCESS) {
+    //     return Object.assign({}, state, {
+    //        currentUser: action.currentUser
+    //     });
+    // }
     return state;
 }

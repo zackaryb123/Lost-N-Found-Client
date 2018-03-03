@@ -7,6 +7,10 @@ form {
     margin: 0 auto;
 }
 
+form input {
+    text-align: center;
+}
+
 form input[type="text"],
 form input[type="password"],
 form input[type="email"]
@@ -15,4 +19,9 @@ form input[type="email"]
     margin: 0;
     border-width: 1px;
     border-radius: 3px;
+}
+
+.dropzone {
+    text-align: center;
+    text-align: -webkit-center;
 }

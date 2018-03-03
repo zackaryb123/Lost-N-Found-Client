@@ -2,6 +2,10 @@
   box-sizing: border-box;
 }
 
+html{
+  background-color: lightblue;
+}
+
 body {
   font-family: "Open Sans",
   sans-serif;
@@ -9,4 +13,46 @@ body {
   color: #444;
   text-align: center;
   line-height: 1.5;
+}
+
+.page {
+  margin-top: 4rem;
+}
+
+nav{
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  background-color: #aaa;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+}
+nav Link {
+  text-decoration: none;
+  color:inherit;
+}
+
+nav ul {
+  background-color: ghostwhite;
+  overflow: hidden;
+  text-align: center;
+  margin: 0;
+  color:white;
+  letter-spacing: .5px;
+  -webkit-transition: max-height 0.4s;
+  -moz-transition: max-height 0.4s;
+  -o-transition: max-height 0.4s;
+  transition: max-height 0.4s;
+}
+
+nav ul li {
+  display: inline-block;
+  padding: 18px 15px;
+  font-size: 17px;
+  transition: 0.3s ease;
+}
+
+nav ul .nav-hover:hover {
+  color:#0098ff;
 }

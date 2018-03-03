@@ -6,6 +6,7 @@ import DashboardNav from "./nav";
 import Profile from "./profile";
 import Find from "./find";
 import Post from "./post";
+import UpdateModal from "./update-modal";
 //import Map from "./map";
 
 //import requiresLogin from './requires-login';
@@ -18,6 +19,7 @@ export function Dashboard() {
                     <Route path="/dashboard/profile" component={Profile} />
                     <Route path="/dashboard/find" component={Find} />
                     <Route path="/dashboard/post" component={Post} />
+                    <Route path="/dashboard/profile-update" component={UpdateModal} />
                     {/*<Route path="/dashboard/map" component={Map} />*/}
                 </div>
             </div>

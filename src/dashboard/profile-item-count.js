@@ -9,7 +9,7 @@ export class ProfileItemCount extends React.Component {
         return (
             <div className="items-count">
                 <div>
-                    <p>[<em>{this.props.itemCount}%</em>]</p>
+                    <p>[<em>{this.props.itemCount}</em>]</p>
                 </div>
             </div>
         );

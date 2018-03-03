@@ -6,7 +6,6 @@ import Input from './input';
 import {required, nonEmpty, matches, length, isTrimmed} from '../validators';
 
 import '../landing/index.css';
-import 'bulma/css/bulma.css';
 
 const passwordLength = length({min: 10, max: 72});
 const matchesPassword = matches('password');

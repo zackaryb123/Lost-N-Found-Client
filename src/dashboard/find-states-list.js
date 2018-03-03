@@ -26,18 +26,18 @@ export class StatesList extends React.Component {
         const itemsList = Object.keys(this.props.states.items).map((item, index) =>
             <ItemsList key={index} items={this.props.states.items[item]}/>
         );
+        const itemCount = itemsList.length;
+        console.log(itemCount);
         return (
             <div className={this.state.active ? 'column dropdown is-active': 'column dropdown'}>
                 <div className="dropdown-trigger">
-                    <button className="button is-fullwidth" onClick={this.toggle} aria-haspopup="true" aria-controls={states.name}>
-                        <span>{states.name}</span>
-                        <span className="icon is-small">
-                            <i className="fas fa-angle-down" aria-hidden="true"></i>
-                        </span>
+                    <button className="button btn-c1 is-fullwidth" onClick={this.toggle} aria-haspopup="true" aria-controls={states.name}>
+                        <span className="btn-title">{states.name}</span>
+                        <span className="btn-count">{itemCount}</span>
                     </button>
                 </div>
                 <div className={this.state.active ? 'is-fullwidth ': 'is-hidden'} id={states.name} role="menu">
-                    <div className="dropdown-content">
+                    <div className="dropdown-content bk-c1">
                         <div className="dropdown-item">
                             <div>
                             {itemsList}

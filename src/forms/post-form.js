@@ -1,6 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {reduxForm, Field, focus} from 'redux-form';
+import {Redirect} from 'react-router-dom';
 import moment from 'moment';
 import DateTimePicker from 'react-widgets/lib/DateTimePicker';
 import DropdownList from 'react-widgets/lib/DropdownList'
@@ -13,22 +14,23 @@ import Input from './input';
 import {required, nonEmpty, isTrimmed} from '../validators';
 
 import '../landing/index.css';
-import {fetchStatesData, postItem} from "../actions/states-data";
+import {postItem} from "../actions/states-data";
 
 import STATES from './data';
 momentLocalizer(moment);
 
 export class PostForm extends React.Component {
     onSubmit(values) {
-        const {name, location, state, dateFound, contactInfo} = values;
+        const dateFound = moment(values.dateFound).format('MMM Do YY');
+        const {name, location, state, contactInfo} = values;
         const item = {name, location, state, dateFound, contactInfo};
-
-        console.log(values);
-        console.log(item);
-
         return this.props
             .dispatch(postItem(item))
-            .then(this.props.dispatch(fetchStatesData()));
+        ;
+    }
+
+    componentWillUnmount() {
+        return <Redirect to="/dashboard/find" />
     }
 
     render() {
@@ -107,7 +109,6 @@ const mapStateToProps = state => ({
 PostForm = connect(mapStateToProps)(PostForm);
 
 export default reduxForm({
-    //contactInfo: state.auth.currentUser.email,
     form: 'post',
     onSubmitFail: (errors, dispatch) =>
         dispatch(focus('post', Object.keys(errors)[0]))

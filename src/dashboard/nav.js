@@ -20,19 +20,25 @@ export class DashboardNav extends React.Component {
         return (
             <nav>
                 <ul>
-                    <Link to="/dashboard/profile">
+                    <Link
+                        to="/dashboard/profile">
                         <li>Profile</li>
                     </Link>
-                    <Link to="/dashboard/find">
+                    <Link
+                        to="/dashboard/find">
                         <li>Find</li>
                     </Link>
-                    <Link to="/dashboard/post">
+                    <Link
+                        to="/dashboard/post">
                         <li>Post</li>
                     </Link>
-                    <Link to="/dashboard/map">
+                    <Link
+                        to="/dashboard/map">
                         <li>Map</li>
                     </Link>
-                    <Link to="/" onClick={() => this.logOut()}>
+                    <Link
+                        to="/"
+                        onClick={() => this.logOut()}>
                         <li>LogOut</li>
                     </Link>
                 </ul>

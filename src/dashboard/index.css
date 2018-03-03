@@ -1,41 +1,9 @@
-.nav {
-    position: fixed;
-    height: 1rem;
-    top:0;
-    left:0;
-    right:0;
-    z-index: 10;
+.profile-page {
+    text-align: -webkit-center;
 }
 
 .item-drop-down > * {
     display: inline;
-}
-
-section {
-    min-height: 200px;
-    padding: 30px 15px;
-    background-color: #bbb;
-}
-
-section:nth-child(even) {
-    background-color: #ddd;
-}
-
-form button {
-    display: block;
-}
-form button {
-    margin: auto;
-}
-
-.list {
-    padding: 0 3rem;
-}
-
-dt,
-dd,
-form input {
-    text-align: center;
 }
 
 p {
@@ -51,15 +19,36 @@ p + p {
     text-align: left;
 }
 
-.item-drop-down-content {
-    padding: 0 2rem;
+.btn-c1{
+    background-color: cadetblue !important;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19) !important;
 }
 
-#js-Avatar {
-    border-radius: 500rem;
-    width: 200px;
+.btn-c2 {
+    background-color: darkgray !important;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19) !important;
 }
 
-#js-Post-User {
-    margin-top: 0;
+.bk-c1 {
+    background-color: ghostwhite !important;
+}
+
+.bk-c2 {
+    background-color: aquamarine !important;
+}
+
+.no-pad {
+    padding: 0 !important;
+}
+
+.btn-title {
+    position: absolute;
+    left: 0;
+    padding-left: 2rem;
+}
+
+.btn-count {
+    position: absolute;
+    right: 0;
+    padding-right: 2rem;
 }

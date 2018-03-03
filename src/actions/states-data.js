@@ -17,7 +17,6 @@ export const fetchStatesDataError = error => ({
 export const fetchStatesData = () => (dispatch, getState) => {
     const authToken = getState().auth.authToken;
     return fetch(`${API_BASE_URL}/states`, {
-        //mode: 'no-cors',
         method: 'GET',
         headers: {
             // Provide our auth token as credentials
@@ -37,7 +36,7 @@ export const fetchStatesData = () => (dispatch, getState) => {
 
 export const postItem = item => (dispatch, getState) => {
     const authToken = getState().auth.authToken;
-    return fetch(`${API_BASE_URL}/states/post`, {        //mode: 'no-cors',
+    return fetch(`${API_BASE_URL}/states/post`, {
         method: 'PUT',
         headers: {
             // Provide our auth token as credentials
@@ -49,6 +48,8 @@ export const postItem = item => (dispatch, getState) => {
     })
         .then(res => normalizeResponseErrors(res))
         .then(res => res.json())
+        .then((data) => {dispatch(fetchStatesDataSuccess(data));})
+        .then(alert('Post Successfull!'))
         .catch(err => {
             const {reason, message, location} = err;
             if (reason === 'ValidationError') {
