@@ -1,7 +1,7 @@
 import React from 'react';
 import {Field, reduxForm, focus} from 'redux-form';
 import Input from './input';
-import Dropzone from './dropzone';
+//import Dropzone from './dropzone';
 import {updateProfile} from "../actions/auth";
 
 export class UpdateForm extends React.Component {
