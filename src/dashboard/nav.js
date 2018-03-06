@@ -32,10 +32,10 @@ export class DashboardNav extends React.Component {
                         to="/dashboard/post">
                         <li>Post</li>
                     </Link>
-                    <Link
-                        to="/dashboard/map">
-                        <li>Map</li>
-                    </Link>
+                    {/*<Link*/}
+                        {/*to="/dashboard/map">*/}
+                        {/*<li>Map</li>*/}
+                    {/*</Link>*/}
                     <Link
                         to="/"
                         onClick={() => this.logOut()}>

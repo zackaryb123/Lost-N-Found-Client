@@ -5,8 +5,8 @@ import './profile.css';
 
 import Avatar from "./profile-avatar";
 import ProfileInfo from "./profile-info";
-import ProfileItemCount from "./profile-item-count";
-import ProfileReturnRate from "./profile-return-rate";
+//import ProfileItemCount from "./profile-item-count";
+//import ProfileReturnRate from "./profile-return-rate";
 import UpdateModal from './update-modal';
 //import ProfileItemsListed from "./profile-listed-items";
 //import requiresLogin from '../requires-login';
@@ -17,8 +17,8 @@ export class Profile extends React.Component {
             <div className="profile-page column">
                 <Avatar />
                 <ProfileInfo />
-                <ProfileItemCount />
-                <ProfileReturnRate />
+                {/*<ProfileItemCount />*/}
+                {/*<ProfileReturnRate />*/}
                 <UpdateModal />
                 <Link to="/dashboard/profile-update">Edit</Link>
                 {/*<Route path="/dashboard/profile/update" component={UpdateModal} />*/}

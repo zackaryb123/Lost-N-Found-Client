@@ -24,10 +24,13 @@ export class StatesList extends React.Component {
         const states = this.props.states;
 
         const itemsList = Object.keys(this.props.states.items).map((item, index) =>
-            <ItemsList key={index} items={this.props.states.items[item]}/>
+            <ItemsList
+                key={index}
+                index={index}
+                items={this.props.states.items[item]}
+            />
         );
         const itemCount = itemsList.length;
-        console.log(itemCount);
         return (
             <div className={this.state.active ? 'column dropdown is-active': 'column dropdown'}>
                 <div className="dropdown-trigger">

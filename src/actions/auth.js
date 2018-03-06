@@ -33,12 +33,6 @@ export const authError = error => ({
     error
 });
 
-// export const POST_ITEM_SUCCESS = 'POST_ITEM_SUCCESS';
-// export const postItemSuccess = user => ({
-//     type:POST_ITEM_SUCCESS,
-//     user
-// });
-
 
 // Stores the auth token in state and localStorage, and decodes and stores
 // the user data stored in the token
@@ -52,6 +46,7 @@ export const storeAuthInfo = (authToken, dispatch) => {
 
 
 export const login = (username, password) => dispatch => {
+    dispatch(authRequest());
     return fetch(`${API_BASE_URL}/auth/login`, {
             method: 'POST',
             headers: {
@@ -87,37 +82,36 @@ export const login = (username, password) => dispatch => {
 export const updateProfile = (formData) => (dispatch, getState) => {
     dispatch(authRequest());
     const authToken = getState().auth.authToken;
-    console.log(formData);
 
     return fetch(`${API_BASE_URL}/auth/update`, {
         method: 'PUT',
         headers: {
+            "content-type": "application/json",
             Authorization: `Bearer ${authToken}`
         },
-        body: formData
+        body: JSON.stringify(formData)
     })
         .then(res => normalizeResponseErrors(res))
         .then(res => res.json())
-        .then(({authToken}) => storeAuthInfo(authToken, dispatch))
 };
 
-export const updateStats = (stats) => (dispatch, getState) => {
-    dispatch(authRequest());
-    const authToken = getState().auth.authToken;
-
-    return fetch(`${API_BASE_URL}/auth/update/stats`, {
-        method: 'PUT',
-        headers: {
-            Authorization: `Bearer ${authToken}`,
-            'Content-Type': 'application/json'
-        },
-        body: stats
-    })
-        .then(res => normalizeResponseErrors(res))
-        .then(res => res.json())
-        .then(({authToken}) => storeAuthInfo(authToken, dispatch))
-
-};
+// export const updateStats = (stats) => (dispatch, getState) => {
+//     dispatch(authRequest());
+//     const authToken = getState().auth.authToken;
+//
+//     return fetch(`${API_BASE_URL}/auth/update/stats`, {
+//         method: 'PUT',
+//         headers: {
+//             Authorization: `Bearer ${authToken}`,
+//             'Content-Type': 'application/json'
+//         },
+//         body: stats
+//     })
+//         .then(res => normalizeResponseErrors(res))
+//         .then(res => res.json())
+//         .then(({authToken}) => storeAuthInfo(authToken, dispatch))
+//
+// };
 
 export const refreshAuthToken = () => (dispatch, getState) => {
     dispatch(authRequest());

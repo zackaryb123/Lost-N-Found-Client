@@ -25,9 +25,9 @@ export class LandingNav extends React.Component {
                         <Link to="/post">
                             <li className="nav-left nav-hover">Post</li>
                         </Link>
-                        <Link to="/map">
-                            <li className="nav-left nav-hover">Map</li>
-                        </Link>
+                        {/*<Link to="/map">*/}
+                            {/*<li className="nav-left nav-hover">Map</li>*/}
+                        {/*</Link>*/}
                         <Link to="/join">
                             <li className="nav-left nav-hover">Sign Up</li>
                         </Link>

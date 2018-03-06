@@ -62,3 +62,27 @@ export const postItem = item => (dispatch, getState) => {
             }
         });
 };
+
+export const removePost = (item, index) => (dispatch, getState) => {
+    const authToken = getState().auth.authToken;
+    const currentUser = getState().auth.currentUser;
+
+    //Debug
+    console.log(item);
+    console.log(currentUser);
+    console.log(index);
+
+    if (item.user !== currentUser.username){
+        alert('You are not the creator of this post!');
+    } else {
+        return fetch(`${API_BASE_URL}/states/remove/${item.state}/${index}`, {
+            method: 'PUT',
+            headers: {
+                // Provide our auth token as credentials
+                'content-type': 'application/json',
+                Authorization: `Bearer ${authToken}`
+            },
+        })
+            .then(dispatch(fetchStatesData()));
+    }
+};

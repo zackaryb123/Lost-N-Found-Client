@@ -21,9 +21,9 @@ export class UpdateForm extends React.Component {
     }
 
     onSubmit(values) {
-        const formData = new FormData(this.state.files[0]);
-        formData.append('email', values.email);
-        return this.props.dispatch(updateProfile(formData));
+        //const formData = new FormData(this.state.files[0]);
+        //formData.append('email', values.email);
+        return this.props.dispatch(updateProfile(values));
     }
 
     render(){
@@ -48,19 +48,19 @@ export class UpdateForm extends React.Component {
                     type="email"
                     name="email"
                 />
-                <label htmlFor="files">Avatar</label>
-                <Field
-                    component={() =>
-                        <Dropzone
-                            handleOnDrop={this.handleOnDrop.bind(this)}
-                            disabled={this.state.disabled}
-                            files={this.state.files}
-                            name="avatar"
-                        />
-                    }
-                    name="avatar"
-                    type="file"
-                />
+                {/*<label htmlFor="files">Avatar</label>*/}
+                {/*<Field*/}
+                    {/*component={() =>*/}
+                        {/*<Dropzone*/}
+                            {/*handleOnDrop={this.handleOnDrop.bind(this)}*/}
+                            {/*disabled={this.state.disabled}*/}
+                            {/*files={this.state.files}*/}
+                            {/*name="avatar"*/}
+                        {/*/>*/}
+                    {/*}*/}
+                    {/*name="avatar"*/}
+                    {/*type="file"*/}
+                {/*/>*/}
                 <button disabled={this.props.pristine || this.props.submitting}>
                     Finish
                 </button>
