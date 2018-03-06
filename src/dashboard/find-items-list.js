@@ -70,18 +70,18 @@ export class ItemsList extends React.Component {
                             <h4>Contact Info:</h4>
                             {items.contactInfo}
                         </div>
-                        <a className="delete" onClick={this.openModal}>/**/</a>
+                        <a className="delete" onClick={this.openModal}>{/**/}</a>
                     </div>
                 </div>
             </div>
             <div className={this.state.modal? 'modal is-active': 'modal'}>
-                <div className="modal-background">/**/</div>
+                <div className="modal-background">{/**/}</div>
                 <div className="modal-content">
                     <p>Are you sure you want to delete post?</p>
                     <button onClick={this.remove}>Yes</button>
                     <button onClick={this.remove}>No</button>
                 </div>
-                <button className="modal-close is-large" onClick={this.openModal} aria-label="close">/**/</button>
+                <button className="modal-close is-large" onClick={this.openModal} aria-label="close">{/**/}</button>
             </div>
         </div>
 
