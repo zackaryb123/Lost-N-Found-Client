@@ -11,7 +11,7 @@ export class LandingAbout extends React.Component {
                     <h3>About</h3>
                 </header>
                 <img alt="about" className="landing-img" src="http://res.cloudinary.com/diygdnbei/image/upload/v1520372255/lostItems_ktrjmh.png"/>
-                <p>Post your lost items per state with detailed location and description for other users to surf and hopfully find there lost items. Leave your contact info for other users to reach you at.</p>
+                <p>Post your lost items per state with detailed location and date found for other users to surf and hopfully find there lost items. Leave your contact info for other users to reach you at.</p>
             </div>
         );
     }
