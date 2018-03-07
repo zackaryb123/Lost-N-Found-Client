@@ -77,9 +77,9 @@ export class ItemsList extends React.Component {
             <div className={this.state.modal? 'modal is-active': 'modal'}>
                 <div className="modal-background">{/**/}</div>
                 <div className="modal-content">
-                    <p>Are you sure you want to delete post?</p>
+                    <p style={{color: 'ghostwhite'}}>Are you sure you want to delete post?</p>
                     <button onClick={this.remove}>Yes</button>
-                    <button onClick={this.remove}>No</button>
+                    <button onClick={this.openModal}>No</button>
                 </div>
                 <button className="modal-close is-large" onClick={this.openModal} aria-label="close">{/**/}</button>
             </div>
