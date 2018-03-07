@@ -17,12 +17,12 @@ export class Avatar extends React.Component {
     }
 }
 
-const mapStateToProps = state => {
-    const currentUser = state.auth.currentUser;
-    return {
-        avatar: currentUser.avatar,
-        username: currentUser.username
-    };
-};
+// const mapStateToProps = state => {
+//     const currentUser = state.auth.currentUser;
+//     return {
+//         avatar: currentUser.avatar,
+//         username: currentUser.username
+//     };
+// };
 
-export default connect(mapStateToProps)(Avatar);
+export default connect()(Avatar);

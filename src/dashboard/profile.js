@@ -8,15 +8,26 @@ import ProfileInfo from "./profile-info";
 //import ProfileItemCount from "./profile-item-count";
 //import ProfileReturnRate from "./profile-return-rate";
 import UpdateModal from './update-modal';
+import {fetchUserInfo} from "../actions/users";
 //import ProfileItemsListed from "./profile-listed-items";
 //import requiresLogin from '../requires-login';
 
 export class Profile extends React.Component {
+    componentDidMount() {
+        this.props.dispatch(fetchUserInfo(this.props.auth.username));
+    }
+
     render() {
+        const user = this.props.user;
+        const auth = this.props.auth;
         return (
             <div className="profile-page column">
-                <Avatar />
-                <ProfileInfo />
+                <Avatar
+                    avatar={auth.avatar}
+                    username={user.username}/>
+                <ProfileInfo
+                    fullName={`${user.firstName} ${user.lastName}`}
+                    contactInfo={user.email}/>
                 {/*<ProfileItemCount />*/}
                 {/*<ProfileReturnRate />*/}
                 <UpdateModal />
@@ -27,8 +38,9 @@ export class Profile extends React.Component {
     }
 }
 
-// const mapStateToProps = state => ({
-//    closed: this.state.closed === true
-// });
+const mapStateToProps = state => ({
+    auth: state.auth.currentUser,
+    user: state.user.data
+});
 
-export default connect()(Profile); //requires login
+export default connect(mapStateToProps)(Profile); //requires login

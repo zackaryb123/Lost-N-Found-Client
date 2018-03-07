@@ -14,12 +14,12 @@ export class ProfileInfo extends React.Component {
     }s
 }
 
-const mapStateToProps = state => {
-    const currentUser = state.auth.currentUser;
-    return {
-        fullName: `${currentUser.firstName} ${currentUser.lastName}`,
-        contactInfo: currentUser.email
-    };
-};
+// const mapStateToProps = state => {
+//     const currentUser = state.auth.currentUser;
+//     return {
+//         fullName: `${currentUser.firstName} ${currentUser.lastName}`,
+//         contactInfo: currentUser.email
+//     };
+// };
 
-export default connect(mapStateToProps)(ProfileInfo);
+export default connect()(ProfileInfo);

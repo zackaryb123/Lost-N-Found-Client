@@ -93,25 +93,9 @@ export const updateProfile = (formData) => (dispatch, getState) => {
     })
         .then(res => normalizeResponseErrors(res))
         .then(res => res.json())
+        .then(alert('Update Successful!'))
+        .catch(err => console.log(err));
 };
-
-// export const updateStats = (stats) => (dispatch, getState) => {
-//     dispatch(authRequest());
-//     const authToken = getState().auth.authToken;
-//
-//     return fetch(`${API_BASE_URL}/auth/update/stats`, {
-//         method: 'PUT',
-//         headers: {
-//             Authorization: `Bearer ${authToken}`,
-//             'Content-Type': 'application/json'
-//         },
-//         body: stats
-//     })
-//         .then(res => normalizeResponseErrors(res))
-//         .then(res => res.json())
-//         .then(({authToken}) => storeAuthInfo(authToken, dispatch))
-//
-// };
 
 export const refreshAuthToken = () => (dispatch, getState) => {
     dispatch(authRequest());

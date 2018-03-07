@@ -6,6 +6,7 @@ import {loadAuthToken} from './local-storage';
 
 import authReducer from './reducers/auth';
 import statesDataReducer from './reducers/states-data';
+import userInfoReducer from './reducers/user'
 
 import {setAuthToken, refreshAuthToken} from './actions/auth';
 
@@ -13,7 +14,8 @@ const store = createStore(
     combineReducers({
         form: formReducer,
         auth: authReducer,
-        states: statesDataReducer
+        states: statesDataReducer,
+        user: userInfoReducer
     }),
     applyMiddleware(thunk)
 );
@@ -21,8 +23,7 @@ const store = createStore(
 // Hydrate the authToken from localStorage if it exist
 const authToken = loadAuthToken();
 if (authToken) {
-    const token = authToken;
-    store.dispatch(setAuthToken(token));
+    store.dispatch(setAuthToken(authToken));
     store.dispatch(refreshAuthToken());
 }
 

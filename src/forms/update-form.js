@@ -23,7 +23,7 @@ export class UpdateForm extends React.Component {
     onSubmit(values) {
         //const formData = new FormData(this.state.files[0]);
         //formData.append('email', values.email);
-        return this.props.dispatch(updateProfile(values));
+        this.props.dispatch(updateProfile(values));
     }
 
     render(){
