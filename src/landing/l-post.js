@@ -10,7 +10,7 @@ export class LandingPost extends React.Component {
                 <header>
                     <h1>Post</h1>
                 </header>
-                <img alt="post" className="landing-img" src="http://res.cloudinary.com/diygdnbei/image/upload/v1520372264/postPage_fipbcr.png"/>
+                <img alt="post" className="landing-img" src="https://res.cloudinary.com/diygdnbei/image/upload/v1520967398/Post_haotst.png"/>
                 <p className="landing-p">Post a lost item for other users to search through and find there items. Include lost item location, date found and description to help others narrow down the search.</p>
             </div>
         );
