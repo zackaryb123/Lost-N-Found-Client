@@ -10,7 +10,7 @@ export class LandingProfile extends React.Component {
                 <header>
                     <h1>Profile</h1>
                 </header>
-                <img alt="profile" className="landing-img" src="https://res.cloudinary.com/diygdnbei/image/upload/v1520967405/profile_nnn3te.png" />
+                <img alt="profile" className="landing-img" src="https://res.cloudinary.com/diygdnbei/image/upload/v1520976187/Capture_paks9u.png" />
                 <p className="landing-p">View your profile and edit your email.</p>
             </div>
         );

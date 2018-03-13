@@ -21,17 +21,6 @@ h1 {
     margin-bottom: 1rem !important;
 }
 
-/*@media (max-width: 500px) {*/
-    /*.nav-btn-drop {*/
-        /*display: inline-block;*/
-        /*color: black;*/
-        /*float: right;*/
-        /*height: 4rem;*/
-        /*width: 4rem;*/
-        /*background-color: ghostwhite;*/
-    /*}*/
-/*}*/
-
 @media (min-width: 500px) {
     #Landing-Nav ul li {
         display: inline-block;
