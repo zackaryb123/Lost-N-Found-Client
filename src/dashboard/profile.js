@@ -3,13 +3,8 @@ import {connect} from 'react-redux';
 import {Link} from 'react-router-dom';
 import './profile.css';
 
-import Avatar from "./profile-avatar";
-import ProfileInfo from "./profile-info";
-//import ProfileItemCount from "./profile-item-count";
-//import ProfileReturnRate from "./profile-return-rate";
-import UpdateModal from './update-modal';
+//import UpdateModal from './update-modal';
 import {fetchUserInfo} from "../actions/users";
-//import ProfileItemsListed from "./profile-listed-items";
 //import requiresLogin from '../requires-login';
 
 export class Profile extends React.Component {
@@ -21,20 +16,27 @@ export class Profile extends React.Component {
         const user = this.props.user;
         const auth = this.props.auth;
         return (
-            <div className="profile-page column">
-                <Avatar
-                    avatar={auth.avatar}
-                    username={user.username}/>
-                <ProfileInfo
-                    fullName={`${user.firstName} ${user.lastName}`}
-                    contactInfo={user.email}/>
-                {/*<ProfileItemCount />*/}
-                {/*<ProfileReturnRate />*/}
-                <UpdateModal />
-                <Link to="/dashboard/profile-update">Edit</Link>
-                {/*<Route path="/dashboard/profile/update" component={UpdateModal} />*/}
-            </div>
-        );
+            <div className="card">
+                <div className="card-content">
+                    <div className="media">
+                        <div className="media-left">
+                            <figure className="image is-48x48">
+                                <img src={auth.avatar} alt="Placeholder"/>
+                            </figure>
+                        </div>
+                        <div className="media-content">
+                            <p className="title is-4">{`${user.firstName} ${user.lastName}`}</p>
+                            <p className="subtitle is-6">@{user.username}</p>
+                        </div>
+                    </div>
+
+                    <div className="content">
+                        <a type='email'>{user.email}</a>
+                        <Link style={{float: 'right'}} to="/dashboard/profile-update">Edit</Link>
+                        {/*<Route path="/dashboard/profile/update" component={UpdateModal} />*/}
+                    </div>
+                </div>
+            </div>);
     }
 }
 

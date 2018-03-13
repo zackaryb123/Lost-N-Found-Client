@@ -56,19 +56,19 @@ export class ItemsList extends React.Component {
                     <div className="dropdown-content bk-c2">
                         <div className="dropdown-item column">
                             <img style={{width: '100px'}} alt="username" src={items.avatar} />
-                            <h3>@{items.user}</h3>
+                            <h4>@{items.user}</h4>
                         </div>
                         <div className="dropdown-item column">
-                            <h4>Location Found:</h4>
-                            {items.location}
+                            <h3>Location Found:</h3>
+                            <h4>{items.location}</h4>
                         </div>
                         <div className="dropdown-item column">
-                            <h4>Date Found:</h4>
-                            {items.dateFound}
+                            <h3>Date Found:</h3>
+                            <h4>{items.dateFound}</h4>
                         </div>
                         <div className="dropdown-item column">
-                            <h4>Contact Info:</h4>
-                            {items.contactInfo}
+                            <h3>Contact Info:</h3>
+                            <h4>{items.contactInfo}</h4>
                         </div>
                         <a className="delete" onClick={this.openModal}>{/**/}</a>
                     </div>

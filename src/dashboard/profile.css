@@ -1,3 +1,19 @@
 .profile-page {
     text-align: -webkit-center;
 }
+
+.card {
+    background: rgba(0, 0, 0, 0.5) !important;
+}
+
+.media-content {
+    overflow: hidden !important;
+}
+
+.media-content p{
+    color: ghostwhite;
+}
+
+.content a {
+    color: ghostwhite;
+}

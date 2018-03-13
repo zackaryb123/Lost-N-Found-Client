@@ -14,7 +14,9 @@ export class Find extends React.Component {
 
     render() {
         const statesList = Object.keys(this.props.states).map((state, index) =>
-            <StatesList key={index} states={this.props.states[state]}/>
+            <StatesList key={index}
+                        states={this.props.states[state]}
+            />
         );
         return (
             <div className="find-page">

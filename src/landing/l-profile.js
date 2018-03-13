@@ -8,10 +8,10 @@ export class LandingProfile extends React.Component {
         return(
             <div>
                 <header>
-                    <h3>Profile</h3>
+                    <h1>Profile</h1>
                 </header>
                 <img alt="profile" className="landing-img" src="http://res.cloudinary.com/diygdnbei/image/upload/v1520372257/profilePage_hlpbcg.png" />
-                <p>View your profile and edit your email.</p>
+                <p className="landing-p">View your profile and edit your email.</p>
             </div>
         );
     }

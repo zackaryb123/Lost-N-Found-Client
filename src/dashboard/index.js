@@ -16,7 +16,7 @@ export function Dashboard() {
             <div className="page">
                 <DashboardNav />
                 <div className="dashboard">
-                    <Route path="/dashboard/profile" component={Profile} />
+                    <Route path="/dashboard" component={Profile} />
                     <Route path="/dashboard/find" component={Find} />
                     <Route path="/dashboard/post" component={Post} />
                     <Route path="/dashboard/profile-update" component={UpdateModal} />

@@ -21,7 +21,7 @@ export class DashboardNav extends React.Component {
             <nav>
                 <ul>
                     <Link
-                        to="/dashboard/profile">
+                        to="/dashboard">
                         <li>Profile</li>
                     </Link>
                     <Link

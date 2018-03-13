@@ -20,7 +20,8 @@ p + p {
 }
 
 .btn-c1{
-    background-color: cadetblue !important;
+    background: rgba(0, 0, 0, 0.5) !important;
+    color: ghostwhite !important;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19) !important;
 }
 
@@ -29,12 +30,16 @@ p + p {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19) !important;
 }
 
+.btn-c2 span{
+    color: black;
+}
+
 .bk-c1 {
-    background-color: ghostwhite !important;
+    background: rgba(0, 0, 0, 0.5) !important;
 }
 
 .bk-c2 {
-    background-color: aquamarine !important;
+    background-color: deepskyblue !important;
 }
 
 .no-pad {
@@ -51,4 +56,12 @@ p + p {
     position: absolute;
     right: 0;
     padding-right: 2rem;
+}
+
+h4 {
+    color: ghostwhite;
+}
+
+h3{
+    font-size: 20px !important;
 }

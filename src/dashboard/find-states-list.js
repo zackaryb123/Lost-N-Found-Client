@@ -32,7 +32,9 @@ export class StatesList extends React.Component {
         );
         const itemCount = itemsList.length;
         return (
-            <div className={this.state.active ? 'column dropdown is-active': 'column dropdown'}>
+            <div className={this.state.active ? 'column dropdown is-active': 'column dropdown'}
+                 style={this.props.states.items.length < 1 ? {display: 'none'} : {display: 'block'}}
+            >
                 <div className="dropdown-trigger">
                     <button className="button btn-c1 is-fullwidth" onClick={this.toggle} aria-haspopup="true" aria-controls={states.name}>
                         <span className="btn-title">{states.name}</span>

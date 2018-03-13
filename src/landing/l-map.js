@@ -8,7 +8,7 @@ export class LandingMap extends React.Component {
         return(
             <div>
                 <header>
-                    <h3>Map</h3>
+                    <h1>Map</h1>
                 </header>
                 <p>[<em>placeholder for screenshot of Mapbox recording interface</em>]</p>
                 <p>Map shows the specific location of where the item was lost at, enabling you to determine whether the item is truely your.</p>

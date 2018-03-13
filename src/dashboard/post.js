@@ -10,6 +10,7 @@ export class Profile extends React.Component {
     render() {
         return (
             <div className="post-page">
+                <h1>Make a Post</h1>
                 <PostForm />
             </div>
         );
