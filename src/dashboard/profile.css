@@ -17,3 +17,7 @@
 .content a {
     color: ghostwhite;
 }
+
+.content a:hover {
+    color: limegreen;
+}

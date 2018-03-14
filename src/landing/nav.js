@@ -8,7 +8,7 @@ export class LandingNav extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            active: false
+            active: true
         };
     }
 
@@ -42,7 +42,7 @@ export class LandingNav extends React.Component {
                         <Link style={this.state.active? {display: 'inline-block'}: {display: 'none'}} to="/login">
                             <li className="nav-right nav-hover log-in" id="demo-button">Sign In</li>
                         </Link>
-                        <button onClick={this.dropDown} style={{color: 'black'}} className="nav-btn-drop">| |</button>
+                        <button onClick={this.dropDown} style={{color: 'black'}} className="nav-btn-drop">| | |</button>
                     </ul>
                 </nav>
             </div>
